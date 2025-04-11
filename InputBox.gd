@@ -2,7 +2,12 @@ extends Label
 
 @onready var debug = $Debug
 @onready var output = $Output
-@onready var answer = "ROUTE"
+@onready var answer
+
+@export var light_theme: Theme
+@export var dark_theme: Theme
+@export var yellow_theme: Theme
+@export var green_theme: Theme
 
 
 func new_input(input: String) -> void:
@@ -23,6 +28,16 @@ func _on_enter_key_pressed():
 		debug.text = "Try again"
 		text = ""
 		output.text += my_word + "\n"
+		
+		for x in my_word.length():
+			var missing_letter = get_node(my_word[x] + "Key")
+			
+			if not answer.contains(my_word[x]):
+				missing_letter.theme = dark_theme
+			elif answer[x] == my_word[x]:
+				missing_letter.theme = green_theme
+			else:
+				missing_letter.theme = yellow_theme
 
 
 func _on_delete_key_pressed():
