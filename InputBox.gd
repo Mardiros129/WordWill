@@ -1,16 +1,28 @@
 extends Label
 
+@onready var debug = $Debug
 @onready var output = $Output
+@onready var answer = "ROUTE"
 
 
 func new_input(input: String) -> void:
 	text += input
 
 
+func _ready() -> void:
+	debug.text = "Write a " + str(answer.length()) + "-letter word."
+
+
 func _on_enter_key_pressed():
 	var my_word = text
-	text = ""
-	output.text += my_word + "\n"
+	if my_word.length() != answer.length():
+		debug.text = "Not a " + str(answer.length()) + "-letter word."
+	elif my_word == answer:
+		debug.text = "Victory!"
+	else:
+		debug.text = "Try again"
+		text = ""
+		output.text += my_word + "\n"
 
 
 func _on_delete_key_pressed():
