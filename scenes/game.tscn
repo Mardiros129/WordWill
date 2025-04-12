@@ -1,30 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvaq87g2hr72f"]
+[gd_scene load_steps=7 format=3 uid="uid://bvaq87g2hr72f"]
 
 [ext_resource type="Script" uid="uid://b8y2ikj2mrww0" path="res://InputBox.gd" id="1_yqjtg"]
 [ext_resource type="Theme" uid="uid://55ylst53xaxy" path="res://themes/light_theme.tres" id="2_lnu2h"]
 [ext_resource type="Theme" uid="uid://b67tv5v8ukr5x" path="res://themes/dark_theme.tres" id="3_lnu2h"]
 [ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="4_iywne"]
 [ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://ts3xf8r1ucb6" path="res://guess_text.tscn" id="6_p57ef"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="InputBox" type="Label" parent="."]
-offset_left = 337.0
-offset_right = 481.0
-offset_bottom = 62.0
+[node name="InputBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 450.0
+offset_top = 14.0
+offset_right = 594.0
+offset_bottom = 76.0
 scale = Vector2(1.6, 1.6)
 script = ExtResource("1_yqjtg")
 light_theme = ExtResource("2_lnu2h")
 dark_theme = ExtResource("3_lnu2h")
 yellow_theme = ExtResource("4_iywne")
 green_theme = ExtResource("5_p57ef")
-
-[node name="Output" type="Label" parent="InputBox"]
-layout_mode = 0
-offset_left = 236.875
-offset_top = 1.875
-offset_right = 397.875
-offset_bottom = 246.875
+metadata/_edit_use_anchors_ = true
 
 [node name="Debug" type="Label" parent="InputBox"]
 layout_mode = 0
@@ -33,286 +31,393 @@ offset_top = 10.0
 offset_right = -93.625
 offset_bottom = 49.0
 text = "..."
+metadata/_edit_use_anchors_ = true
 
 [node name="EnterKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -100.0
-offset_top = 359.5
-offset_right = -13.0
-offset_bottom = 422.5
+offset_left = -64.375
+offset_top = 489.625
+offset_right = 22.625
+offset_bottom = 552.625
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "ENTER"
+metadata/_edit_use_anchors_ = true
 
 [node name="DeleteKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 346.124
-offset_top = 359.5
-offset_right = 434.124
-offset_bottom = 422.5
+offset_left = 273.125
+offset_top = 489.0
+offset_right = 361.125
+offset_bottom = 552.0
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "DELETE"
+metadata/_edit_use_anchors_ = true
+
+[node name="GuessText1" parent="InputBox" instance=ExtResource("6_p57ef")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0201613
+anchor_right = 0.0217014
+anchor_bottom = 0.0201613
+offset_left = -17.5
+offset_top = 62.5
+offset_right = 22.5
+offset_bottom = 102.5
+metadata/_edit_use_anchors_ = true
+
+[node name="GuessText2" parent="InputBox" instance=ExtResource("6_p57ef")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0201613
+anchor_right = 0.0217014
+anchor_bottom = 0.0201613
+offset_left = -17.5
+offset_top = 108.75
+offset_right = 22.5
+offset_bottom = 148.75
+metadata/_edit_use_anchors_ = true
+
+[node name="GuessText3" parent="InputBox" instance=ExtResource("6_p57ef")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0201613
+anchor_right = 0.0217014
+anchor_bottom = 0.0201613
+offset_left = -17.5
+offset_top = 155.0
+offset_right = 22.5
+offset_bottom = 195.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GuessText4" parent="InputBox" instance=ExtResource("6_p57ef")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0201613
+anchor_right = 0.0217014
+anchor_bottom = 0.0201613
+offset_left = -17.5
+offset_top = 200.625
+offset_right = 22.5
+offset_bottom = 240.625
+metadata/_edit_use_anchors_ = true
+
+[node name="GuessText5" parent="InputBox" instance=ExtResource("6_p57ef")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0201613
+anchor_right = 0.0217014
+anchor_bottom = 0.0201613
+offset_left = -17.5
+offset_top = 246.875
+offset_right = 22.5
+offset_bottom = 286.875
+metadata/_edit_use_anchors_ = true
+
+[node name="GuessText6" parent="InputBox" instance=ExtResource("6_p57ef")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0217014
+anchor_top = 0.0201613
+anchor_right = 0.0217014
+anchor_bottom = 0.0201613
+offset_left = -17.5
+offset_top = 292.5
+offset_right = 22.5
+offset_bottom = 332.5
+metadata/_edit_use_anchors_ = true
 
 [node name="AKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -75.0
-offset_top = 306.75
-offset_right = -23.0
-offset_bottom = 369.75
+offset_left = -39.375
+offset_top = 444.375
+offset_right = 12.625
+offset_bottom = 507.375
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "A"
+metadata/_edit_use_anchors_ = true
 
 [node name="BKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 191.25
-offset_top = 359.5
-offset_right = 243.25
-offset_bottom = 422.5
+offset_left = 156.25
+offset_top = 489.5
+offset_right = 208.25
+offset_bottom = 552.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "B"
+metadata/_edit_use_anchors_ = true
 
 [node name="CKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 81.4995
-offset_top = 359.5
-offset_right = 133.5
-offset_bottom = 422.5
+offset_left = 77.1245
+offset_top = 488.875
+offset_right = 129.125
+offset_bottom = 551.875
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "C"
+metadata/_edit_use_anchors_ = true
 
 [node name="DKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 28.4995
-offset_top = 306.75
-offset_right = 80.4995
-offset_bottom = 369.75
+offset_left = 37.8745
+offset_top = 443.625
+offset_right = 89.8745
+offset_bottom = 506.625
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "D"
+metadata/_edit_use_anchors_ = true
 
 [node name="EKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -0.625001
-offset_top = 254.375
-offset_right = 51.375
-offset_bottom = 317.375
+offset_left = 15.0
+offset_top = 397.5
+offset_right = 67.0
+offset_bottom = 460.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "E"
+metadata/_edit_use_anchors_ = true
 
 [node name="FKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 82.1245
-offset_top = 306.75
-offset_right = 134.125
-offset_bottom = 369.75
+offset_left = 77.7495
+offset_top = 443.625
+offset_right = 129.75
+offset_bottom = 506.625
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "F"
+metadata/_edit_use_anchors_ = true
 
 [node name="GKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 134.625
-offset_top = 306.75
-offset_right = 186.625
-offset_bottom = 369.75
+offset_left = 116.875
+offset_top = 443.75
+offset_right = 168.875
+offset_bottom = 506.75
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "G"
+metadata/_edit_use_anchors_ = true
 
 [node name="HKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 191.875
-offset_top = 306.75
-offset_right = 243.875
-offset_bottom = 369.75
+offset_left = 156.875
+offset_top = 444.25
+offset_right = 208.875
+offset_bottom = 507.25
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "H"
+metadata/_edit_use_anchors_ = true
 
 [node name="IKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 257.5
-offset_top = 254.375
-offset_right = 309.5
-offset_bottom = 317.375
+offset_left = 209.25
+offset_top = 398.125
+offset_right = 261.25
+offset_bottom = 461.125
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "I"
+metadata/_edit_use_anchors_ = true
 
 [node name="JKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 244.25
-offset_top = 306.75
-offset_right = 296.25
-offset_bottom = 369.75
+offset_left = 196.0
+offset_top = 444.25
+offset_right = 248.0
+offset_bottom = 507.25
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "J"
+metadata/_edit_use_anchors_ = true
 
 [node name="KKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 295.125
-offset_top = 306.75
-offset_right = 347.124
-offset_bottom = 369.75
+offset_left = 234.375
+offset_top = 444.25
+offset_right = 286.374
+offset_bottom = 507.25
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "K"
+metadata/_edit_use_anchors_ = true
 
 [node name="LKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 346.749
-offset_top = 306.75
-offset_right = 398.749
-offset_bottom = 369.75
+offset_left = 273.75
+offset_top = 443.75
+offset_right = 325.75
+offset_bottom = 506.75
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "L"
+metadata/_edit_use_anchors_ = true
 
 [node name="MKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 294.5
-offset_top = 359.5
-offset_right = 346.499
-offset_bottom = 422.5
+offset_left = 233.75
+offset_top = 489.5
+offset_right = 285.749
+offset_bottom = 552.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "M"
+metadata/_edit_use_anchors_ = true
 
 [node name="NKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 242.625
-offset_top = 359.5
-offset_right = 294.625
-offset_bottom = 422.5
+offset_left = 194.375
+offset_top = 489.5
+offset_right = 246.375
+offset_bottom = 552.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "N"
+metadata/_edit_use_anchors_ = true
 
 [node name="OKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 308.125
-offset_top = 254.375
-offset_right = 360.124
-offset_bottom = 317.375
+offset_left = 247.375
+offset_top = 398.125
+offset_right = 299.374
+offset_bottom = 461.125
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "O"
+metadata/_edit_use_anchors_ = true
 
 [node name="PKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 356.25
-offset_top = 254.375
-offset_right = 408.25
-offset_bottom = 317.375
+offset_left = 285.751
+offset_top = 398.125
+offset_right = 337.751
+offset_bottom = 461.125
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "P"
+metadata/_edit_use_anchors_ = true
 
 [node name="QKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -98.75
-offset_top = 254.375
-offset_right = -46.75
-offset_bottom = 317.375
+offset_left = -63.125
+offset_top = 396.875
+offset_right = -11.125
+offset_bottom = 459.875
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "Q"
+metadata/_edit_use_anchors_ = true
 
 [node name="RKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 52.5
-offset_top = 254.375
-offset_right = 104.5
-offset_bottom = 317.375
+offset_left = 53.75
+offset_top = 397.5
+offset_right = 105.75
+offset_bottom = 460.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "R"
+metadata/_edit_use_anchors_ = true
 
 [node name="SKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -24.2505
-offset_top = 306.75
-offset_right = 27.7495
-offset_bottom = 369.75
+offset_left = -0.5005
+offset_top = 444.375
+offset_right = 51.4995
+offset_bottom = 507.375
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "S"
+metadata/_edit_use_anchors_ = true
 
 [node name="TKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 105.0
-offset_top = 254.375
-offset_right = 157.0
-offset_bottom = 317.375
+offset_left = 92.5
+offset_top = 397.5
+offset_right = 144.5
+offset_bottom = 460.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "T"
+metadata/_edit_use_anchors_ = true
 
 [node name="UKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 205.625
-offset_top = 254.375
-offset_right = 257.625
-offset_bottom = 317.375
+offset_left = 170.625
+offset_top = 398.125
+offset_right = 222.625
+offset_bottom = 461.125
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "U"
+metadata/_edit_use_anchors_ = true
 
 [node name="VKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 137.0
-offset_top = 359.5
-offset_right = 189.0
-offset_bottom = 422.5
+offset_left = 115.75
+offset_top = 488.875
+offset_right = 167.75
+offset_bottom = 551.875
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "V"
+metadata/_edit_use_anchors_ = true
 
 [node name="WKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -51.875
-offset_top = 254.375
-offset_right = 0.124493
-offset_bottom = 317.375
+offset_left = -23.75
+offset_top = 397.5
+offset_right = 28.2495
+offset_bottom = 460.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "W"
+metadata/_edit_use_anchors_ = true
 
 [node name="XKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 28.75
-offset_top = 359.5
-offset_right = 80.75
-offset_bottom = 422.5
+offset_left = 38.125
+offset_top = 488.875
+offset_right = 90.125
+offset_bottom = 551.875
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "X"
+metadata/_edit_use_anchors_ = true
 
 [node name="YKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 155.625
-offset_top = 254.375
-offset_right = 207.625
-offset_bottom = 317.375
+offset_left = 131.25
+offset_top = 397.5
+offset_right = 183.25
+offset_bottom = 460.5
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "Y"
+metadata/_edit_use_anchors_ = true
 
 [node name="ZKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = -24.8755
-offset_top = 359.5
-offset_right = 27.1245
-offset_bottom = 422.5
+offset_left = -1.1255
+offset_top = 489.625
+offset_right = 50.8745
+offset_bottom = 552.625
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("2_lnu2h")
 text = "Z"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="InputBox/EnterKey" to="InputBox" method="_on_enter_key_pressed"]
 [connection signal="pressed" from="InputBox/DeleteKey" to="InputBox" method="_on_delete_key_pressed"]

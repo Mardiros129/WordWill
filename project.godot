@@ -14,3 +14,8 @@ config/name="WordWill"
 run/main_scene="uid://dai0ivdfrif0e"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1300
+window/size/viewport_height=900

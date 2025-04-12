@@ -8,6 +8,6 @@ func _on_button_pressed() -> void:
 		var answer = line_edit.text.to_upper()
 		
 		var game = game_scene.instantiate()
-		game.get_child(0).answer = answer
+		game.get_node("InputBox").answer = answer
 		get_tree().root.add_child(game)
 		get_tree().root.remove_child(self)

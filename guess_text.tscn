@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ts3xf8r1ucb6"]
+
+[ext_resource type="Theme" uid="uid://55ylst53xaxy" path="res://themes/light_theme.tres" id="1_ervk5"]
+[ext_resource type="Script" uid="uid://b6wc6xxygbe26" path="res://guess_text.gd" id="1_tndhs"]
+[ext_resource type="Theme" uid="uid://b67tv5v8ukr5x" path="res://themes/dark_theme.tres" id="2_tndhs"]
+[ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="3_6l5g5"]
+[ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="4_vat7a"]
+
+[node name="GuessText" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tndhs")
+light_theme = ExtResource("1_ervk5")
+dark_theme = ExtResource("2_tndhs")
+yellow_theme = ExtResource("3_6l5g5")
+green_theme = ExtResource("4_vat7a")
+
+[node name="BlankKey" type="Button" parent="."]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 63.0
+scale = Vector2(0.678475, 0.681375)
+theme = ExtResource("1_ervk5")
+disabled = true

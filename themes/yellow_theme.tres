@@ -1,7 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cbds32u6wi2cf"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cbds32u6wi2cf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkd1c"]
+bg_color = Color(0.67451, 0.607843, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4scy"]
 bg_color = Color(0.673231, 0.608156, 0, 1)
 
 [resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_jkd1c")
 Button/styles/normal = SubResource("StyleBoxFlat_a4scy")
