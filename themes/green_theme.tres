@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bj35dnqj1vtx1"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bj35dnqj1vtx1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn1fw"]
 bg_color = Color(0, 0.580392, 0, 1)
@@ -6,6 +6,10 @@ bg_color = Color(0, 0.580392, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4scy"]
 bg_color = Color(0, 0.580392, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcyvi"]
+bg_color = Color(0, 0.580392, 0, 1)
+
 [resource]
 Button/styles/disabled = SubResource("StyleBoxFlat_kn1fw")
 Button/styles/normal = SubResource("StyleBoxFlat_a4scy")
+Panel/styles/panel = SubResource("StyleBoxFlat_pcyvi")

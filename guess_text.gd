@@ -11,7 +11,7 @@ extends Control
 
 
 func create_letter_slots(letter_count: int) -> void:
-	var letter = get_child(0)
+	var letter = get_node("Label")
 	
 	for n in letter_count:
 		var new_letter = letter.duplicate()
@@ -42,12 +42,12 @@ func get_word() -> String:
 
 
 func set_dark(index: int) -> void:
-	letter_slots[index].theme = dark_theme
+	letter_slots[index].get_node("Panel").theme = dark_theme
 
 
 func set_yellow(index: int) -> void:
-	letter_slots[index].theme = yellow_theme
+	letter_slots[index].get_node("Panel").theme = yellow_theme
 
 
 func set_green(index: int) -> void:
-	letter_slots[index].theme = green_theme
+	letter_slots[index].get_node("Panel").theme = green_theme

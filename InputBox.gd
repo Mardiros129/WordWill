@@ -1,6 +1,8 @@
 extends Control
 
 @onready var enter_key = $EnterKey
+@onready var delete_key = $DeleteKey
+
 @onready var debug = $Debug
 @onready var answer
 @onready var guess_limit = 6
@@ -15,7 +17,8 @@ extends Control
 
 
 func new_input(input: String) -> void:
-	guess_text_array[current_guess].insert_letter(input)
+	if current_guess < guess_limit:
+		guess_text_array[current_guess].insert_letter(input)
 
 
 func _ready() -> void:
@@ -48,10 +51,13 @@ func _on_enter_key_pressed():
 				if missing_letter.theme != green_theme:
 					missing_letter.theme = yellow_theme
 					guess_text_array[current_guess].set_yellow(x)
+				else:
+					guess_text_array[current_guess].set_dark(x)
 		
 		current_guess += 1
 		if current_guess == guess_limit:
 			enter_key.disabled = true
+			delete_key.disabled = true
 
 
 func _on_delete_key_pressed():

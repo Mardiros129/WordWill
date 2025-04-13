@@ -17,10 +17,17 @@ dark_theme = ExtResource("2_tndhs")
 yellow_theme = ExtResource("3_6l5g5")
 green_theme = ExtResource("4_vat7a")
 
-[node name="BlankKey" type="Button" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 52.0
-offset_bottom = 63.0
+offset_right = 33.0
+offset_bottom = 35.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Label"]
+z_index = -1
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 53.0
 scale = Vector2(0.678475, 0.681375)
 theme = ExtResource("1_ervk5")
-disabled = true
