@@ -2,6 +2,7 @@ extends Control
 
 @onready var enter_key = $EnterKey
 @onready var delete_key = $DeleteKey
+@onready var keyboard = $Keyboard
 
 @onready var debug = $Debug
 @onready var answer
@@ -27,6 +28,16 @@ func _ready() -> void:
 		guess_text_array[n].create_letter_slots(answer.length())
 
 
+func _on_reset_button_pressed() -> void:
+	current_guess = 0
+	
+	for n in guess_text_array.size():
+		guess_text_array[n].full_reset()
+	
+	for n in keyboard.get_child_count():
+		keyboard.get_child(n).theme = light_theme
+
+
 func _on_enter_key_pressed():
 	var my_word = guess_text_array[current_guess].get_word()
 	if my_word.length() != answer.length():
@@ -39,7 +50,7 @@ func _on_enter_key_pressed():
 			debug.text = "Try again"
 			
 		for x in my_word.length():
-			var missing_letter = get_node(my_word[x] + "Key")
+			var missing_letter = keyboard.get_node(my_word[x] + "Key")
 			
 			if not answer.contains(my_word[x]):
 				missing_letter.theme = dark_theme

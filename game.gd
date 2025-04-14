@@ -6,6 +6,6 @@ func _unhandled_input(event):
 		get_tree().quit()
 
 
-func _on_reset_button_pressed() -> void:
+func _on_menu_button_pressed() -> void:
 	get_tree().root.get_node("StartMenu").show()
 	self.queue_free()

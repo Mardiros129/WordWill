@@ -10,6 +10,7 @@ bg_color = Color(0.673231, 0.608156, 0, 1)
 bg_color = Color(0.67451, 0.607843, 0, 1)
 
 [resource]
+Button/font_sizes/font_size = 50
 Button/styles/disabled = SubResource("StyleBoxFlat_jkd1c")
 Button/styles/normal = SubResource("StyleBoxFlat_a4scy")
 Panel/styles/panel = SubResource("StyleBoxFlat_jip7o")

@@ -1,33 +1,104 @@
-[gd_scene load_steps=6 format=3 uid="uid://ts3xf8r1ucb6"]
+[gd_scene load_steps=11 format=3 uid="uid://ts3xf8r1ucb6"]
 
 [ext_resource type="Theme" uid="uid://55ylst53xaxy" path="res://themes/light_theme.tres" id="1_ervk5"]
 [ext_resource type="Script" uid="uid://b6wc6xxygbe26" path="res://guess_text.gd" id="1_tndhs"]
 [ext_resource type="Theme" uid="uid://b67tv5v8ukr5x" path="res://themes/dark_theme.tres" id="2_tndhs"]
 [ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="3_6l5g5"]
 [ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="4_vat7a"]
+[ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/empty_theme.tres" id="6_adrgf"]
+[ext_resource type="Script" uid="uid://ifu8j2lrd6wm" path="res://letter_box.gd" id="7_8o1sk"]
+
+[sub_resource type="Animation" id="Animation_8o1sk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LetterBox:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LetterBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_adrgf"]
+resource_name = "pop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LetterBox:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 80), Vector2(94, 94), Vector2(80, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LetterBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-7, -7), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rriw1"]
+_data = {
+&"RESET": SubResource("Animation_8o1sk"),
+&"pop": SubResource("Animation_adrgf")
+}
 
 [node name="GuessText" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 80.0
+offset_bottom = 80.0
 script = ExtResource("1_tndhs")
 light_theme = ExtResource("1_ervk5")
 dark_theme = ExtResource("2_tndhs")
 yellow_theme = ExtResource("3_6l5g5")
 green_theme = ExtResource("4_vat7a")
+empty_theme = ExtResource("6_adrgf")
 
-[node name="Label" type="Label" parent="."]
+[node name="LetterBox" type="Panel" parent="."]
+z_index = -1
 layout_mode = 0
-offset_right = 33.0
-offset_bottom = 35.0
+offset_right = 80.0
+offset_bottom = 80.0
+theme = ExtResource("6_adrgf")
+script = ExtResource("7_8o1sk")
+
+[node name="Label" type="Label" parent="LetterBox"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Label"]
-z_index = -1
-layout_mode = 0
-offset_right = 50.0
-offset_bottom = 53.0
-scale = Vector2(0.678475, 0.681375)
-theme = ExtResource("1_ervk5")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LetterBox"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_rriw1")
+}

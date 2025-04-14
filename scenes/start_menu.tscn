@@ -108,13 +108,12 @@ _data = {
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.559
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_top = 255.0
-offset_bottom = 255.0
+anchor_bottom = 0.559
+offset_top = 160.6
+offset_bottom = 160.6
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouf4f")
@@ -167,7 +166,7 @@ offset_right = 246.0
 offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
 text = "Write a 3-10 letter word."
 horizontal_alignment = 1
 
@@ -203,6 +202,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_4v6gu")
 }
 autoplay = "Hover"
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+offset_left = 455.0
+offset_top = 398.0
+offset_right = 1188.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0.556953, 0.556953, 0.556953, 1)
+theme_override_font_sizes/font_size = 50
+text = "By Will Stone, Stone Craftwork"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="VisibilityToggle" to="." method="_on_visibility_toggle_toggled"]

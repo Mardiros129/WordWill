@@ -38,43 +38,50 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.74045
-anchor_top = 0.262097
-anchor_right = 1.82378
-anchor_bottom = 0.423387
+anchor_top = 0.258065
+anchor_right = 2.51128
+anchor_bottom = 0.467742
 offset_left = -200.625
 offset_top = 10.0
 offset_right = -93.625
 offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
 text = "..."
 metadata/_edit_use_anchors_ = true
 
 [node name="EnterKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 191.25
-offset_top = 869.375
-offset_right = 278.25
-offset_bottom = 932.375
-scale = Vector2(1.88531, 1.74438)
+offset_left = 176.25
+offset_top = 891.875
+offset_right = 376.25
+offset_bottom = 1001.88
 theme = ExtResource("2_lnu2h")
 text = "ENTER"
 
 [node name="DeleteKey" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 1326.88
-offset_top = 870.0
-offset_right = 1414.88
-offset_bottom = 933.0
-scale = Vector2(1.88531, 1.74438)
+offset_left = 1308.75
+offset_top = 896.25
+offset_right = 1508.75
+offset_bottom = 1006.25
 theme = ExtResource("2_lnu2h")
 text = "DELETE"
 
 [node name="ResetButton" type="Button" parent="InputBox"]
 layout_mode = 0
-offset_left = 1510.0
-offset_top = 36.0
-offset_right = 1631.0
-offset_bottom = 89.0
+offset_left = 1508.75
+offset_top = 36.25
+offset_right = 1629.75
+offset_bottom = 89.25
 text = "RESET"
+
+[node name="MenuButton" type="Button" parent="InputBox"]
+layout_mode = 0
+offset_left = 1376.25
+offset_top = 36.25
+offset_right = 1497.25
+offset_bottom = 89.25
+text = "MAIN MENU"
 
 [node name="GuessText1" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -83,13 +90,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 412.375
-offset_top = 15.25
-offset_right = 452.375
-offset_bottom = 55.25
+offset_left = 428.0
+offset_top = 9.0
+offset_right = 428.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.20063, 2.20063)
 
 [node name="GuessText2" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -98,12 +104,10 @@ anchor_left = 1.43229
 anchor_top = 0.332661
 anchor_right = 1.43229
 anchor_bottom = 0.332661
-offset_left = 278.125
-offset_top = 113.125
-offset_right = 318.125
-offset_bottom = 153.125
-scale = Vector2(2.20063, 2.20063)
-metadata/_edit_use_anchors_ = true
+offset_left = 293.75
+offset_top = 109.375
+offset_right = 293.75
+offset_bottom = 109.375
 
 [node name="GuessText3" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -112,12 +116,10 @@ anchor_left = 1.43229
 anchor_top = 1.00806
 anchor_right = 1.43229
 anchor_bottom = 1.00806
-offset_left = 278.125
-offset_top = 159.375
-offset_right = 318.125
-offset_bottom = 199.375
-scale = Vector2(2.20063, 2.20063)
-metadata/_edit_use_anchors_ = true
+offset_left = 293.75
+offset_top = 157.5
+offset_right = 293.75
+offset_bottom = 157.5
 
 [node name="GuessText4" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -126,12 +128,10 @@ anchor_left = 1.43229
 anchor_top = 1.66331
 anchor_right = 1.43229
 anchor_bottom = 1.66331
-offset_left = 278.125
-offset_top = 205.0
-offset_right = 318.125
-offset_bottom = 245.0
-scale = Vector2(2.20063, 2.20063)
-metadata/_edit_use_anchors_ = true
+offset_left = 293.75
+offset_top = 206.875
+offset_right = 293.75
+offset_bottom = 206.875
 
 [node name="GuessText5" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -140,313 +140,148 @@ anchor_left = 1.43229
 anchor_top = 2.34879
 anchor_right = 1.43229
 anchor_bottom = 2.34879
-offset_left = 278.125
-offset_top = 251.25
-offset_right = 318.125
-offset_bottom = 291.25
-scale = Vector2(2.20063, 2.20063)
-metadata/_edit_use_anchors_ = true
+offset_left = 293.75
+offset_top = 254.375
+offset_right = 293.75
+offset_bottom = 254.375
 
 [node name="GuessText6" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.43229
-anchor_top = 3.04436
+anchor_top = 3.04435
 anchor_right = 1.43229
 anchor_bottom = 3.04435
-offset_left = 278.125
-offset_top = 296.875
-offset_right = 318.125
-offset_bottom = 336.875
-scale = Vector2(2.20063, 2.20063)
-metadata/_edit_use_anchors_ = true
+offset_left = 293.75
+offset_top = 301.25
+offset_right = 293.75
+offset_bottom = 301.25
 
-[node name="AKey" type="Button" parent="InputBox"]
+[node name="Keyboard" type="Control" parent="InputBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AKey" type="Button" parent="InputBox/Keyboard"]
 layout_mode = 0
-offset_left = 263.125
-offset_top = 748.75
-offset_right = 315.125
-offset_bottom = 811.75
-scale = Vector2(1.88532, 1.74438)
+offset_left = 250.0
+offset_top = 760.0
+offset_right = 360.0
+offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "A"
 
-[node name="BKey" type="Button" parent="InputBox"]
+[node name="QKey" type="Button" parent="InputBox/Keyboard"]
 layout_mode = 0
-offset_left = 908.125
-offset_top = 871.25
-offset_right = 960.125
-offset_bottom = 934.25
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "B"
-
-[node name="CKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 640.625
-offset_top = 873.75
-offset_right = 692.625
-offset_bottom = 936.75
-scale = Vector2(1.88531, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "C"
-
-[node name="DKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 508.125
-offset_top = 745.0
-offset_right = 560.125
-offset_bottom = 808.0
-scale = Vector2(1.88531, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "D"
-
-[node name="EKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 461.875
-offset_top = 631.875
-offset_right = 513.875
-offset_bottom = 694.875
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "E"
-
-[node name="FKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 638.75
-offset_top = 740.0
-offset_right = 690.75
-offset_bottom = 803.0
-scale = Vector2(1.88531, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "F"
-
-[node name="GKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 776.875
-offset_top = 738.125
-offset_right = 828.875
-offset_bottom = 801.125
-scale = Vector2(1.88531, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "G"
-
-[node name="HKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 906.875
-offset_top = 744.375
-offset_right = 958.875
-offset_bottom = 807.375
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "H"
-
-[node name="IKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1100.63
-offset_top = 625.625
-offset_right = 1152.63
-offset_bottom = 688.625
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "I"
-
-[node name="JKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1050.0
-offset_top = 745.625
-offset_right = 1102.0
-offset_bottom = 808.625
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "J"
-
-[node name="KKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1173.13
-offset_top = 747.5
-offset_right = 1225.12
-offset_bottom = 810.5
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "K"
-
-[node name="LKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1304.38
-offset_top = 741.25
-offset_right = 1356.38
-offset_bottom = 804.25
-scale = Vector2(1.88531, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "L"
-
-[node name="MKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1190.0
-offset_top = 875.0
-offset_right = 1242.0
-offset_bottom = 938.0
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "M"
-
-[node name="NKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1047.5
-offset_top = 875.0
-offset_right = 1099.5
-offset_bottom = 938.0
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "N"
-
-[node name="OKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1240.62
-offset_top = 615.625
-offset_right = 1292.62
-offset_bottom = 678.625
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "O"
-
-[node name="PKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 1383.13
-offset_top = 622.5
-offset_right = 1435.13
-offset_bottom = 685.5
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "P"
-
-[node name="QKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 209.375
-offset_top = 634.375
-offset_right = 261.375
-offset_bottom = 697.375
-scale = Vector2(1.88532, 1.74438)
+offset_left = 250.0
+offset_top = 640.0
+offset_right = 360.0
+offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "Q"
 
-[node name="RKey" type="Button" parent="InputBox"]
+[node name="WKey" type="Button" parent="InputBox/Keyboard"]
 layout_mode = 0
-offset_left = 590.625
-offset_top = 620.0
-offset_right = 642.625
-offset_bottom = 683.0
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "R"
-
-[node name="SKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 384.375
-offset_top = 749.375
-offset_right = 436.375
-offset_bottom = 812.375
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "S"
-
-[node name="TKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 716.25
-offset_top = 617.5
-offset_right = 768.25
-offset_bottom = 680.5
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "T"
-
-[node name="UKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 963.75
-offset_top = 620.0
-offset_right = 1015.75
-offset_bottom = 683.0
-scale = Vector2(1.88532, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "U"
-
-[node name="VKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 769.375
-offset_top = 863.125
-offset_right = 821.375
-offset_bottom = 926.125
-scale = Vector2(1.88531, 1.74438)
-theme = ExtResource("2_lnu2h")
-text = "V"
-
-[node name="WKey" type="Button" parent="InputBox"]
-layout_mode = 0
-offset_left = 321.25
-offset_top = 629.375
-offset_right = 373.25
-offset_bottom = 692.375
-scale = Vector2(1.88532, 1.74438)
+offset_left = 370.0
+offset_top = 640.0
+offset_right = 480.0
+offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "W"
 
-[node name="XKey" type="Button" parent="InputBox"]
+[node name="EKey" type="Button" parent="InputBox/Keyboard"]
 layout_mode = 0
-offset_left = 501.875
-offset_top = 861.875
-offset_right = 553.875
-offset_bottom = 924.875
-scale = Vector2(1.88531, 1.74438)
+offset_left = 490.0
+offset_top = 640.0
+offset_right = 600.0
+offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
-text = "X"
+text = "E"
 
-[node name="YKey" type="Button" parent="InputBox"]
+[node name="RKey" type="Button" parent="InputBox/Keyboard"]
 layout_mode = 0
-offset_left = 841.25
-offset_top = 618.75
-offset_right = 893.25
-offset_bottom = 681.75
-scale = Vector2(1.88532, 1.74438)
+offset_left = 610.0
+offset_top = 640.0
+offset_right = 720.0
+offset_bottom = 750.0
+theme = ExtResource("2_lnu2h")
+text = "R"
+
+[node name="TKey" type="Button" parent="InputBox/Keyboard"]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 640.0
+offset_right = 840.0
+offset_bottom = 750.0
+theme = ExtResource("2_lnu2h")
+text = "T"
+
+[node name="YKey" type="Button" parent="InputBox/Keyboard"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 640.0
+offset_right = 960.0
+offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "Y"
 
-[node name="ZKey" type="Button" parent="InputBox"]
+[node name="UKey" type="Button" parent="InputBox/Keyboard"]
 layout_mode = 0
-offset_left = 374.375
-offset_top = 868.75
-offset_right = 426.375
-offset_bottom = 931.75
-scale = Vector2(1.88531, 1.74438)
+offset_left = 970.0
+offset_top = 640.0
+offset_right = 1080.0
+offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
-text = "Z"
+text = "U"
+
+[node name="IKey" type="Button" parent="InputBox/Keyboard"]
+layout_mode = 0
+offset_left = 1090.0
+offset_top = 640.0
+offset_right = 1200.0
+offset_bottom = 750.0
+theme = ExtResource("2_lnu2h")
+text = "I"
+
+[node name="OKey" type="Button" parent="InputBox/Keyboard"]
+layout_mode = 0
+offset_left = 1210.0
+offset_top = 640.0
+offset_right = 1320.0
+offset_bottom = 750.0
+theme = ExtResource("2_lnu2h")
+text = "O"
+
+[node name="PKey" type="Button" parent="InputBox/Keyboard"]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 640.0
+offset_right = 1440.0
+offset_bottom = 750.0
+theme = ExtResource("2_lnu2h")
+text = "P"
 
 [connection signal="pressed" from="InputBox/EnterKey" to="InputBox" method="_on_enter_key_pressed"]
 [connection signal="pressed" from="InputBox/DeleteKey" to="InputBox" method="_on_delete_key_pressed"]
-[connection signal="pressed" from="InputBox/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="InputBox/AKey" to="InputBox" method="_on_a_key_pressed"]
-[connection signal="pressed" from="InputBox/BKey" to="InputBox" method="_on_b_key_pressed"]
-[connection signal="pressed" from="InputBox/CKey" to="InputBox" method="_on_c_key_pressed"]
-[connection signal="pressed" from="InputBox/DKey" to="InputBox" method="_on_d_key_pressed"]
-[connection signal="pressed" from="InputBox/EKey" to="InputBox" method="_on_e_key_pressed"]
-[connection signal="pressed" from="InputBox/FKey" to="InputBox" method="_on_f_key_pressed"]
-[connection signal="pressed" from="InputBox/GKey" to="InputBox" method="_on_g_key_pressed"]
-[connection signal="pressed" from="InputBox/HKey" to="InputBox" method="_on_h_key_pressed"]
-[connection signal="pressed" from="InputBox/IKey" to="InputBox" method="_on_i_key_pressed"]
-[connection signal="pressed" from="InputBox/JKey" to="InputBox" method="_on_j_key_pressed"]
-[connection signal="pressed" from="InputBox/KKey" to="InputBox" method="_on_k_key_pressed"]
-[connection signal="pressed" from="InputBox/LKey" to="InputBox" method="_on_l_key_pressed"]
-[connection signal="pressed" from="InputBox/MKey" to="InputBox" method="_on_m_key_pressed"]
-[connection signal="pressed" from="InputBox/NKey" to="InputBox" method="_on_n_key_pressed"]
-[connection signal="pressed" from="InputBox/OKey" to="InputBox" method="_on_o_key_pressed"]
-[connection signal="pressed" from="InputBox/PKey" to="InputBox" method="_on_p_key_pressed"]
-[connection signal="pressed" from="InputBox/QKey" to="InputBox" method="_on_q_key_pressed"]
-[connection signal="pressed" from="InputBox/RKey" to="InputBox" method="_on_r_key_pressed"]
-[connection signal="pressed" from="InputBox/SKey" to="InputBox" method="_on_s_key_pressed"]
-[connection signal="pressed" from="InputBox/TKey" to="InputBox" method="_on_t_key_pressed"]
-[connection signal="pressed" from="InputBox/UKey" to="InputBox" method="_on_u_key_pressed"]
-[connection signal="pressed" from="InputBox/VKey" to="InputBox" method="_on_v_key_pressed"]
-[connection signal="pressed" from="InputBox/WKey" to="InputBox" method="_on_w_key_pressed"]
-[connection signal="pressed" from="InputBox/XKey" to="InputBox" method="_on_x_key_pressed"]
-[connection signal="pressed" from="InputBox/YKey" to="InputBox" method="_on_y_key_pressed"]
-[connection signal="pressed" from="InputBox/ZKey" to="InputBox" method="_on_z_key_pressed"]
+[connection signal="pressed" from="InputBox/ResetButton" to="InputBox" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="InputBox/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/AKey" to="InputBox" method="_on_a_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/QKey" to="InputBox" method="_on_q_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/WKey" to="InputBox" method="_on_w_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/EKey" to="InputBox" method="_on_e_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/RKey" to="InputBox" method="_on_r_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/TKey" to="InputBox" method="_on_t_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/YKey" to="InputBox" method="_on_y_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/UKey" to="InputBox" method="_on_u_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/IKey" to="InputBox" method="_on_i_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/OKey" to="InputBox" method="_on_o_key_pressed"]
+[connection signal="pressed" from="InputBox/Keyboard/PKey" to="InputBox" method="_on_p_key_pressed"]
