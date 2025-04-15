@@ -3,12 +3,40 @@
 [ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/empty_theme.tres" id="1_vubbj"]
 [ext_resource type="Script" uid="uid://ifu8j2lrd6wm" path="res://scripts/letter_box.gd" id="2_gibne"]
 
-[sub_resource type="Animation" id="Animation_8o1sk"]
+[sub_resource type="Animation" id="Animation_vubbj"]
+resource_name = "pop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 80), Vector2(94, 94), Vector2(80, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-7, -7), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gibne"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("LetterBox:size")
+tracks/0/path = NodePath("Panel:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +48,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("LetterBox:position")
+tracks/1/path = NodePath("Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -29,71 +57,27 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LetterBox/Label:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
-[sub_resource type="Animation" id="Animation_adrgf"]
-resource_name = "pop"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LetterBox:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(80, 80), Vector2(94, 94), Vector2(80, 80)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LetterBox:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-7, -7), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LetterBox/Label:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(7, 7), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rriw1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a18ed"]
 _data = {
-&"RESET": SubResource("Animation_8o1sk"),
-&"pop": SubResource("Animation_adrgf")
+&"RESET": SubResource("Animation_gibne"),
+&"pop": SubResource("Animation_vubbj")
 }
 
-[node name="LetterBox" type="Panel"]
+[node name="LetterBox" type="Control"]
 z_index = -1
+layout_mode = 3
+anchors_preset = 0
 offset_right = 80.0
 offset_bottom = 80.0
 theme = ExtResource("1_vubbj")
 script = ExtResource("2_gibne")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+theme = ExtResource("1_vubbj")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -104,7 +88,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../..")
 libraries = {
-&"": SubResource("AnimationLibrary_rriw1")
+&"": SubResource("AnimationLibrary_a18ed")
 }

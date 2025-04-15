@@ -16,7 +16,7 @@ extends Control
 func create_letter_slots(letter_count: int) -> void:
 	for n in letter_count:
 		var letter_box = box_scene.instantiate()
-		add_child(letter_box)
+		self.add_child(letter_box)
 		letter_box.position.x = offset * n
 		letter_slots.append(letter_box)
 
@@ -47,20 +47,20 @@ func full_reset() -> void:
 
 
 func set_dark(index: int) -> void:
-	letter_slots[index].theme = dark_theme
+	letter_slots[index].get_node("Panel").theme = dark_theme
 
 
 func set_light(index: int) -> void:
-	letter_slots[index].theme = light_theme
+	letter_slots[index].get_node("Panel").theme = light_theme
 
 
 func set_yellow(index: int) -> void:
-	letter_slots[index].theme = yellow_theme
+	letter_slots[index].get_node("Panel").theme = yellow_theme
 
 
 func set_green(index: int) -> void:
-	letter_slots[index].theme = green_theme
+	letter_slots[index].get_node("Panel").theme = green_theme
 
 
 func set_empty(index: int) -> void:
-	letter_slots[index].theme = empty_theme
+	letter_slots[index].get_node("Panel").theme = empty_theme

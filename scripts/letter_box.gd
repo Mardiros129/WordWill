@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 
 @onready var anim_player = $AnimationPlayer
 @onready var label = $Label

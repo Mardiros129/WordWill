@@ -1,7 +1,7 @@
 extends Control
 
-@onready var enter_key = $EnterKey
-@onready var delete_key = $DeleteKey
+@onready var enter_key = $Keyboard/EnterKey
+@onready var delete_key = $Keyboard/DeleteKey
 @onready var keyboard = $Keyboard
 
 @onready var debug = $Debug
@@ -87,8 +87,15 @@ func new_input(input: String) -> void:
 		guess_text_array[current_guess].insert_letter(input)
 
 
+func disable_keyboard(disable: bool) -> void:
+	for n in keyboard.get_child_count():
+		keyboard.get_child(n).disabled = disable
+
+
 func _on_reset_button_pressed() -> void:
 	current_guess = 0
+	
+	disable_keyboard(false)
 	
 	for n in guess_text_array.size():
 		guess_text_array[n].full_reset()
@@ -105,6 +112,7 @@ func _on_enter_key_pressed():
 	else:
 		if my_word == answer:
 			debug.text = "Victory!"
+			disable_keyboard(true)
 		else:
 			debug.text = "Try again"
 			
@@ -126,8 +134,7 @@ func _on_enter_key_pressed():
 		
 		current_guess += 1
 		if current_guess == guess_limit:
-			enter_key.disabled = true
-			delete_key.disabled = true
+			disable_keyboard(true)
 
 
 func _on_delete_key_pressed():
