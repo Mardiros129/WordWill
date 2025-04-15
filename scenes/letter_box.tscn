@@ -1,12 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ts3xf8r1ucb6"]
+[gd_scene load_steps=6 format=3 uid="uid://b6k3tx1x13v8p"]
 
-[ext_resource type="Theme" uid="uid://55ylst53xaxy" path="res://themes/light_theme.tres" id="1_ervk5"]
-[ext_resource type="Script" uid="uid://b6wc6xxygbe26" path="res://guess_text.gd" id="1_tndhs"]
-[ext_resource type="Theme" uid="uid://b67tv5v8ukr5x" path="res://themes/dark_theme.tres" id="2_tndhs"]
-[ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="3_6l5g5"]
-[ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="4_vat7a"]
-[ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/empty_theme.tres" id="6_adrgf"]
-[ext_resource type="Script" uid="uid://ifu8j2lrd6wm" path="res://letter_box.gd" id="7_8o1sk"]
+[ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/empty_theme.tres" id="1_vubbj"]
+[ext_resource type="Script" uid="uid://ifu8j2lrd6wm" path="res://scripts/letter_box.gd" id="2_gibne"]
 
 [sub_resource type="Animation" id="Animation_8o1sk"]
 length = 0.001
@@ -29,6 +24,18 @@ tracks/1/path = NodePath("LetterBox:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LetterBox/Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -62,6 +69,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-7, -7), Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LetterBox/Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(7, 7), Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rriw1"]
 _data = {
@@ -69,27 +88,14 @@ _data = {
 &"pop": SubResource("Animation_adrgf")
 }
 
-[node name="GuessText" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 80.0
-offset_bottom = 80.0
-script = ExtResource("1_tndhs")
-light_theme = ExtResource("1_ervk5")
-dark_theme = ExtResource("2_tndhs")
-yellow_theme = ExtResource("3_6l5g5")
-green_theme = ExtResource("4_vat7a")
-empty_theme = ExtResource("6_adrgf")
-
-[node name="LetterBox" type="Panel" parent="."]
+[node name="LetterBox" type="Panel"]
 z_index = -1
-layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
-theme = ExtResource("6_adrgf")
-script = ExtResource("7_8o1sk")
+theme = ExtResource("1_vubbj")
+script = ExtResource("2_gibne")
 
-[node name="Label" type="Label" parent="LetterBox"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
@@ -97,7 +103,7 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LetterBox"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_rriw1")

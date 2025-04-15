@@ -10,17 +10,15 @@ extends Control
 @export var green_theme: Theme
 @export var empty_theme: Theme
 
+@export var box_scene: PackedScene
+
 
 func create_letter_slots(letter_count: int) -> void:
-	var letter = get_node("LetterBox")
-	
 	for n in letter_count:
-		var new_letter = letter.duplicate()
-		add_child(new_letter)
-		new_letter.position.x = offset * n
-		letter_slots.append(new_letter)
-	
-	letter.hide()
+		var letter_box = box_scene.instantiate()
+		add_child(letter_box)
+		letter_box.position.x = offset * n
+		letter_slots.append(letter_box)
 
 
 func delete_letter():
@@ -31,7 +29,7 @@ func delete_letter():
 
 func insert_letter(input: String) -> void:
 	if current_character < letter_slots.size():
-		letter_slots[current_character].new_letter(input)
+		letter_slots[current_character].insert_letter(input)
 		current_character += 1
 
 

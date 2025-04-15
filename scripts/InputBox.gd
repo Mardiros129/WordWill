@@ -17,15 +17,74 @@ extends Control
 @onready var guess_text_array = [$GuessText1, $GuessText2, $GuessText3, $GuessText4, $GuessText5, $GuessText6]
 
 
-func new_input(input: String) -> void:
-	if current_guess < guess_limit:
-		guess_text_array[current_guess].insert_letter(input)
-
-
 func _ready() -> void:
 	debug.text = "Write a " + str(answer.length()) + "-letter word."
 	for n in guess_text_array.size():
 		guess_text_array[n].create_letter_slots(answer.length())
+
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("Action_A"):
+		new_input("A")
+	elif Input.is_action_just_pressed("Action_B"):
+		new_input("B")
+	elif Input.is_action_just_pressed("Action_C"):
+		new_input("C")
+	elif Input.is_action_just_pressed("Action_D"):
+		new_input("D")
+	elif Input.is_action_just_pressed("Action_E"):
+		new_input("E")
+	elif Input.is_action_just_pressed("Action_F"):
+		new_input("F")
+	elif Input.is_action_just_pressed("Action_G"):
+		new_input("G")
+	elif Input.is_action_just_pressed("Action_H"):
+		new_input("H")
+	elif Input.is_action_just_pressed("Action_I"):
+		new_input("I")
+	elif Input.is_action_just_pressed("Action_J"):
+		new_input("J")
+	elif Input.is_action_just_pressed("Action_K"):
+		new_input("K")
+	elif Input.is_action_just_pressed("Action_L"):
+		new_input("L")
+	elif Input.is_action_just_pressed("Action_M"):
+		new_input("M")
+	elif Input.is_action_just_pressed("Action_N"):
+		new_input("N")
+	elif Input.is_action_just_pressed("Action_O"):
+		new_input("O")
+	elif Input.is_action_just_pressed("Action_P"):
+		new_input("P")
+	elif Input.is_action_just_pressed("Action_Q"):
+		new_input("Q")
+	elif Input.is_action_just_pressed("Action_R"):
+		new_input("R")
+	elif Input.is_action_just_pressed("Action_S"):
+		new_input("S")
+	elif Input.is_action_just_pressed("Action_T"):
+		new_input("T")
+	elif Input.is_action_just_pressed("Action_U"):
+		new_input("U")
+	elif Input.is_action_just_pressed("Action_V"):
+		new_input("V")
+	elif Input.is_action_just_pressed("Action_W"):
+		new_input("W")
+	elif Input.is_action_just_pressed("Action_X"):
+		new_input("X")
+	elif Input.is_action_just_pressed("Action_Y"):
+		new_input("Y")
+	elif Input.is_action_just_pressed("Action_Z"):
+		new_input("Z")
+	elif Input.is_physical_key_pressed(KEY_BACKSPACE):
+		_on_delete_key_pressed()
+	elif Input.is_physical_key_pressed(KEY_ENTER):
+		_on_enter_key_pressed()
+
+
+func new_input(input: String) -> void:
+	if current_guess < guess_limit:
+		guess_text_array[current_guess].insert_letter(input)
 
 
 func _on_reset_button_pressed() -> void:

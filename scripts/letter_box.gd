@@ -4,8 +4,7 @@ extends Panel
 @onready var label = $Label
 
 
-func new_letter(letter: String):
-	print("hi")
+func insert_letter(letter: String):
 	label.text = letter
 	anim_player.play("pop")
 

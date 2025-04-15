@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bvaq87g2hr72f"]
 
-[ext_resource type="Script" uid="uid://bacc8dxysip37" path="res://game.gd" id="1_u5sy4"]
-[ext_resource type="Script" uid="uid://b8y2ikj2mrww0" path="res://InputBox.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://bacc8dxysip37" path="res://scripts/game.gd" id="1_u5sy4"]
+[ext_resource type="Script" uid="uid://b8y2ikj2mrww0" path="res://scripts/InputBox.gd" id="1_yqjtg"]
 [ext_resource type="Theme" uid="uid://55ylst53xaxy" path="res://themes/light_theme.tres" id="2_lnu2h"]
 [ext_resource type="Theme" uid="uid://b67tv5v8ukr5x" path="res://themes/dark_theme.tres" id="3_lnu2h"]
 [ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="4_iywne"]
 [ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="5_p57ef"]
-[ext_resource type="PackedScene" uid="uid://ts3xf8r1ucb6" path="res://guess_text.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://ts3xf8r1ucb6" path="res://scenes/guess_text.tscn" id="6_p57ef"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_u5sy4")
@@ -37,16 +37,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Debug" type="Label" parent="InputBox"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.74045
-anchor_top = 0.258065
-anchor_right = 2.51128
-anchor_bottom = 0.467742
+anchor_left = 6.10851
+anchor_top = 0.306452
+anchor_right = 6.94184
+anchor_bottom = 0.306452
 offset_left = -200.625
 offset_top = 10.0
-offset_right = -93.625
-offset_bottom = 49.0
+offset_right = 17.3745
+offset_bottom = 62.0
 theme_override_font_sizes/font_size = 30
 text = "..."
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ResetButton" type="Button" parent="InputBox"]
@@ -72,10 +73,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 428.0
-offset_top = 9.0
-offset_right = 428.0
-offset_bottom = 9.0
+offset_left = 490.5
+offset_top = 63.375
+offset_right = 490.5
+offset_bottom = 63.375
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -86,10 +87,10 @@ anchor_left = 1.43229
 anchor_top = 0.332661
 anchor_right = 1.43229
 anchor_bottom = 0.332661
-offset_left = 293.75
-offset_top = 109.375
-offset_right = 293.75
-offset_bottom = 109.375
+offset_left = 356.25
+offset_top = 163.75
+offset_right = 356.25
+offset_bottom = 163.75
 
 [node name="GuessText3" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -98,10 +99,10 @@ anchor_left = 1.43229
 anchor_top = 1.00806
 anchor_right = 1.43229
 anchor_bottom = 1.00806
-offset_left = 293.75
-offset_top = 157.5
-offset_right = 293.75
-offset_bottom = 157.5
+offset_left = 356.25
+offset_top = 211.875
+offset_right = 356.25
+offset_bottom = 211.875
 
 [node name="GuessText4" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -110,10 +111,10 @@ anchor_left = 1.43229
 anchor_top = 1.66331
 anchor_right = 1.43229
 anchor_bottom = 1.66331
-offset_left = 293.75
-offset_top = 206.875
-offset_right = 293.75
-offset_bottom = 206.875
+offset_left = 356.25
+offset_top = 261.25
+offset_right = 356.25
+offset_bottom = 261.25
 
 [node name="GuessText5" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -122,10 +123,10 @@ anchor_left = 1.43229
 anchor_top = 2.34879
 anchor_right = 1.43229
 anchor_bottom = 2.34879
-offset_left = 293.75
-offset_top = 254.375
-offset_right = 293.75
-offset_bottom = 254.375
+offset_left = 356.25
+offset_top = 308.75
+offset_right = 356.25
+offset_bottom = 308.75
 
 [node name="GuessText6" parent="InputBox" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -134,10 +135,10 @@ anchor_left = 1.43229
 anchor_top = 3.04435
 anchor_right = 1.43229
 anchor_bottom = 3.04435
-offset_left = 293.75
-offset_top = 301.25
-offset_right = 293.75
-offset_bottom = 301.25
+offset_left = 356.25
+offset_top = 355.625
+offset_right = 356.25
+offset_bottom = 355.625
 
 [node name="Keyboard" type="Control" parent="InputBox"]
 layout_mode = 1
