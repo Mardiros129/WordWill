@@ -38,18 +38,24 @@ metadata/_edit_use_anchors_ = true
 [node name="Debug" type="Label" parent="InputScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.10851
-anchor_top = 0.306452
-anchor_right = 6.94184
-anchor_bottom = 0.306452
+anchor_left = 6.08941
+anchor_top = 0.46371
+anchor_right = 6.92275
+anchor_bottom = 0.302419
 offset_left = -200.625
 offset_top = 10.0
 offset_right = 17.3745
 offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "..."
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="InputScreen/Debug"]
+layout_mode = 0
+offset_right = 340.0
+offset_bottom = 40.0
 
 [node name="ResetButton" type="Button" parent="InputScreen"]
 layout_mode = 0

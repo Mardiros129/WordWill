@@ -4,8 +4,19 @@ extends Control
 @export var game_scene: PackedScene
 
 
+func _ready() -> void:
+	line_edit.grab_focus()
 
-func _on_button_pressed() -> void:
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("Exit"):
+		get_tree().quit()
+	
+	if Input.is_action_just_pressed("Enter"):
+		start_game()
+
+
+func start_game() -> void:
 	if line_edit.text.length() > 2:
 		var answer = line_edit.text.to_upper()
 		
@@ -16,9 +27,8 @@ func _on_button_pressed() -> void:
 		self.hide()
 
 
-func _unhandled_input(event):
-	if Input.is_action_pressed("Exit"):
-		get_tree().quit()
+func _on_button_pressed() -> void:
+	start_game()
 
 
 func _on_visibility_toggle_toggled(toggled_on: bool) -> void:

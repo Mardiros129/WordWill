@@ -1,7 +1,7 @@
 extends Control
 
-@onready var enter_key = $Keyboard/EnterKey
-@onready var delete_key = $Keyboard/DeleteKey
+@onready var enter_key = $EnterKey
+@onready var delete_key = $DeleteKey
 @onready var keyboard = $Keyboard
 
 @onready var debug = $Debug
@@ -86,7 +86,7 @@ func _unhandled_input(event):
 			new_input("Z")
 		elif Input.is_physical_key_pressed(KEY_BACKSPACE):
 			_on_delete_key_pressed()
-		elif Input.is_physical_key_pressed(KEY_ENTER):
+		elif Input.is_action_just_pressed("Enter"):
 			_on_enter_key_pressed()
 
 
@@ -99,6 +99,8 @@ func disable_keyboard(disable: bool) -> void:
 	for n in keyboard.get_child_count():
 		keyboard.get_child(n).disabled = disable
 	input_enabled = not disable
+	enter_key.disabled = disable
+	delete_key.disabled = disable
 
 
 func _on_reset_button_pressed() -> void:
@@ -117,8 +119,6 @@ func _on_reset_button_pressed() -> void:
 
 
 func _on_enter_key_pressed():
-	disable_keyboard(true)
-	
 	# Check word size
 	var my_word = guess_text_array[current_guess].get_word()
 	if my_word.length() != answer.length():
@@ -126,6 +126,8 @@ func _on_enter_key_pressed():
 	
 	# Check validity of each letter
 	else:
+		disable_keyboard(true)
+		
 		for x in my_word.length():
 			var missing_letter = keyboard.get_node(my_word[x] + "Key")
 			missing_letter.checked = true
