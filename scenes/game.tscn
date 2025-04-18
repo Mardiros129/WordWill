@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvaq87g2hr72f"]
+[gd_scene load_steps=9 format=3 uid="uid://bvaq87g2hr72f"]
 
 [ext_resource type="Script" uid="uid://bacc8dxysip37" path="res://scripts/game.gd" id="1_u5sy4"]
 [ext_resource type="Script" uid="uid://b8y2ikj2mrww0" path="res://scripts/input_screen.gd" id="1_yqjtg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="4_iywne"]
 [ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://ts3xf8r1ucb6" path="res://scenes/guess_text.tscn" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://d2t47ndspb7ib" path="res://scripts/key.gd" id="8_gee14"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_u5sy4")
@@ -140,6 +141,26 @@ offset_top = 350.625
 offset_right = 645.0
 offset_bottom = 350.625
 
+[node name="EnterKey" type="Button" parent="InputScreen"]
+layout_mode = 0
+offset_left = 223.125
+offset_top = 883.125
+offset_right = 423.125
+offset_bottom = 993.125
+theme = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 30
+text = "ENTER"
+
+[node name="DeleteKey" type="Button" parent="InputScreen"]
+layout_mode = 0
+offset_left = 1273.12
+offset_top = 883.125
+offset_right = 1473.12
+offset_bottom = 993.125
+theme = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 30
+text = "DELETE"
+
 [node name="Keyboard" type="Control" parent="InputScreen"]
 layout_mode = 1
 anchors_preset = 8
@@ -154,24 +175,6 @@ offset_bottom = 12.125
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EnterKey" type="Button" parent="InputScreen/Keyboard"]
-layout_mode = 0
-offset_left = 220.0
-offset_top = 880.0
-offset_right = 420.0
-offset_bottom = 990.0
-theme = ExtResource("2_lnu2h")
-text = "ENTER"
-
-[node name="DeleteKey" type="Button" parent="InputScreen/Keyboard"]
-layout_mode = 0
-offset_left = 1270.0
-offset_top = 880.0
-offset_right = 1470.0
-offset_bottom = 990.0
-theme = ExtResource("2_lnu2h")
-text = "DELETE"
-
 [node name="AKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
 offset_left = 310.0
@@ -180,6 +183,7 @@ offset_right = 420.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "A"
+script = ExtResource("8_gee14")
 
 [node name="BKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -189,6 +193,7 @@ offset_right = 1020.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "B"
+script = ExtResource("8_gee14")
 
 [node name="CKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -198,6 +203,7 @@ offset_right = 780.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "C"
+script = ExtResource("8_gee14")
 
 [node name="DKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -207,6 +213,7 @@ offset_right = 660.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "D"
+script = ExtResource("8_gee14")
 
 [node name="EKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -216,6 +223,7 @@ offset_right = 600.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "E"
+script = ExtResource("8_gee14")
 
 [node name="FKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -225,6 +233,7 @@ offset_right = 780.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "F"
+script = ExtResource("8_gee14")
 
 [node name="GKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -234,6 +243,7 @@ offset_right = 900.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "G"
+script = ExtResource("8_gee14")
 
 [node name="HKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -243,6 +253,7 @@ offset_right = 1020.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "H"
+script = ExtResource("8_gee14")
 
 [node name="IKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -252,6 +263,7 @@ offset_right = 1200.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "I"
+script = ExtResource("8_gee14")
 
 [node name="JKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -261,6 +273,7 @@ offset_right = 1140.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "J"
+script = ExtResource("8_gee14")
 
 [node name="KKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -270,6 +283,7 @@ offset_right = 1260.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "K"
+script = ExtResource("8_gee14")
 
 [node name="LKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -279,6 +293,7 @@ offset_right = 1380.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "L"
+script = ExtResource("8_gee14")
 
 [node name="MKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -288,6 +303,7 @@ offset_right = 1260.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "M"
+script = ExtResource("8_gee14")
 
 [node name="NKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -297,6 +313,7 @@ offset_right = 1140.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "N"
+script = ExtResource("8_gee14")
 
 [node name="OKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -306,6 +323,7 @@ offset_right = 1320.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "O"
+script = ExtResource("8_gee14")
 
 [node name="PKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -315,6 +333,7 @@ offset_right = 1440.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "P"
+script = ExtResource("8_gee14")
 
 [node name="QKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -324,6 +343,7 @@ offset_right = 360.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "Q"
+script = ExtResource("8_gee14")
 
 [node name="RKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -333,6 +353,7 @@ offset_right = 720.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "R"
+script = ExtResource("8_gee14")
 
 [node name="SKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -342,6 +363,7 @@ offset_right = 540.0
 offset_bottom = 870.0
 theme = ExtResource("2_lnu2h")
 text = "S"
+script = ExtResource("8_gee14")
 
 [node name="TKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -351,6 +373,7 @@ offset_right = 840.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "T"
+script = ExtResource("8_gee14")
 
 [node name="UKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -360,6 +383,7 @@ offset_right = 1080.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "U"
+script = ExtResource("8_gee14")
 
 [node name="VKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -369,6 +393,7 @@ offset_right = 900.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "V"
+script = ExtResource("8_gee14")
 
 [node name="WKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -378,6 +403,7 @@ offset_right = 480.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "W"
+script = ExtResource("8_gee14")
 
 [node name="XKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -387,6 +413,7 @@ offset_right = 660.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "X"
+script = ExtResource("8_gee14")
 
 [node name="YKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -396,6 +423,7 @@ offset_right = 960.0
 offset_bottom = 750.0
 theme = ExtResource("2_lnu2h")
 text = "Y"
+script = ExtResource("8_gee14")
 
 [node name="ZKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -405,17 +433,24 @@ offset_right = 540.0
 offset_bottom = 990.0
 theme = ExtResource("2_lnu2h")
 text = "Z"
+script = ExtResource("8_gee14")
 
 [connection signal="pressed" from="InputScreen/ResetButton" to="InputScreen" method="_on_reset_button_pressed"]
 [connection signal="pressed" from="InputScreen/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="show_debug_victory" from="InputScreen/GuessText1" to="InputScreen" method="_on_guess_text_show_debug_victory"]
-[connection signal="show_debug_victory" from="InputScreen/GuessText2" to="InputScreen" method="_on_guess_text_show_debug_victory"]
-[connection signal="show_debug_victory" from="InputScreen/GuessText3" to="InputScreen" method="_on_guess_text_show_debug_victory"]
-[connection signal="show_debug_victory" from="InputScreen/GuessText4" to="InputScreen" method="_on_guess_text_show_debug_victory"]
-[connection signal="show_debug_victory" from="InputScreen/GuessText5" to="InputScreen" method="_on_guess_text_show_debug_victory"]
-[connection signal="show_debug_victory" from="InputScreen/GuessText6" to="InputScreen" method="_on_guess_text_show_debug_victory"]
-[connection signal="pressed" from="InputScreen/Keyboard/EnterKey" to="InputScreen" method="_on_enter_key_pressed"]
-[connection signal="pressed" from="InputScreen/Keyboard/DeleteKey" to="InputScreen" method="_on_delete_key_pressed"]
+[connection signal="reveal_anim_finished" from="InputScreen/GuessText1" to="InputScreen" method="_on_guess_text_reveal_anim_finished"]
+[connection signal="victory_anim_finished" from="InputScreen/GuessText1" to="InputScreen" method="_on_guess_text_victory_anim_finished"]
+[connection signal="reveal_anim_finished" from="InputScreen/GuessText2" to="InputScreen" method="_on_guess_text_reveal_anim_finished"]
+[connection signal="victory_anim_finished" from="InputScreen/GuessText2" to="InputScreen" method="_on_guess_text_victory_anim_finished"]
+[connection signal="reveal_anim_finished" from="InputScreen/GuessText3" to="InputScreen" method="_on_guess_text_reveal_anim_finished"]
+[connection signal="victory_anim_finished" from="InputScreen/GuessText3" to="InputScreen" method="_on_guess_text_victory_anim_finished"]
+[connection signal="reveal_anim_finished" from="InputScreen/GuessText4" to="InputScreen" method="_on_guess_text_reveal_anim_finished"]
+[connection signal="victory_anim_finished" from="InputScreen/GuessText4" to="InputScreen" method="_on_guess_text_victory_anim_finished"]
+[connection signal="reveal_anim_finished" from="InputScreen/GuessText5" to="InputScreen" method="_on_guess_text_reveal_anim_finished"]
+[connection signal="victory_anim_finished" from="InputScreen/GuessText5" to="InputScreen" method="_on_guess_text_victory_anim_finished"]
+[connection signal="reveal_anim_finished" from="InputScreen/GuessText6" to="InputScreen" method="_on_guess_text_reveal_anim_finished"]
+[connection signal="victory_anim_finished" from="InputScreen/GuessText6" to="InputScreen" method="_on_guess_text_victory_anim_finished"]
+[connection signal="pressed" from="InputScreen/EnterKey" to="InputScreen" method="_on_enter_key_pressed"]
+[connection signal="pressed" from="InputScreen/DeleteKey" to="InputScreen" method="_on_delete_key_pressed"]
 [connection signal="pressed" from="InputScreen/Keyboard/AKey" to="InputScreen" method="_on_a_key_pressed"]
 [connection signal="pressed" from="InputScreen/Keyboard/BKey" to="InputScreen" method="_on_b_key_pressed"]
 [connection signal="pressed" from="InputScreen/Keyboard/CKey" to="InputScreen" method="_on_c_key_pressed"]

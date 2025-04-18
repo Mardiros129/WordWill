@@ -13,7 +13,8 @@ extends Container
 
 @export var box_scene: PackedScene
 
-signal show_debug_victory
+signal reveal_anim_finished
+signal victory_anim_finished
 
 
 func create_letter_slots(letter_count: int) -> void:
@@ -59,7 +60,9 @@ func full_reset() -> void:
 func play_reveal_anim() -> void:
 	for n in letter_slots.size():
 		letter_slots[n].play_box_reveal()
-		await get_tree().create_timer(0.2).timeout 
+		await get_tree().create_timer(0.2).timeout
+	
+	reveal_anim_finished.emit()
 
 
 func play_victory_anim() -> void:
@@ -70,7 +73,7 @@ func play_victory_anim() -> void:
 		letter_slots[n].play_box_victory()
 		await get_tree().create_timer(0.2).timeout
 	
-	show_debug_victory.emit()
+	victory_anim_finished.emit()
 
 
 func set_dark(index: int) -> void:

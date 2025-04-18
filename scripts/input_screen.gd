@@ -10,6 +10,8 @@ extends Control
 @onready var current_guess = 0
 @onready var input_enabled = true
 
+@onready var update_color_queue: Array
+
 @export var light_theme: Theme
 @export var dark_theme: Theme
 @export var yellow_theme: Theme
@@ -109,11 +111,14 @@ func _on_reset_button_pressed() -> void:
 	
 	for n in keyboard.get_child_count():
 		keyboard.get_child(n).theme = light_theme
+		keyboard.get_child(n).reset_key()
 	
 	set_debug_default()
 
 
 func _on_enter_key_pressed():
+	disable_keyboard(true)
+	
 	# Check word size
 	var my_word = guess_text_array[current_guess].get_word()
 	if my_word.length() != answer.length():
@@ -123,16 +128,20 @@ func _on_enter_key_pressed():
 	else:
 		for x in my_word.length():
 			var missing_letter = keyboard.get_node(my_word[x] + "Key")
+			missing_letter.checked = true
+			update_color_queue.append(missing_letter)
 			
 			if not answer.contains(my_word[x]):
-				missing_letter.theme = dark_theme
+				missing_letter.in_word = false
 				guess_text_array[current_guess].set_dark(x)
 			elif answer[x] == my_word[x]:
-				missing_letter.theme = green_theme
+				missing_letter.in_word = true
+				missing_letter.in_position = true
 				guess_text_array[current_guess].set_green(x)
 			else:
-				if missing_letter.theme != green_theme:
-					missing_letter.theme = yellow_theme
+				if not missing_letter.in_position:
+					missing_letter.in_word = true
+					missing_letter.in_position = false
 					guess_text_array[current_guess].set_yellow(x)
 				else:
 					guess_text_array[current_guess].set_dark(x)
@@ -145,20 +154,33 @@ func _on_enter_key_pressed():
 			guess_text_array[current_guess].play_victory_anim()
 		
 		current_guess += 1
-		
-		# Defeat
-		if current_guess == guess_limit:
-			disable_keyboard(true)
-			debug.text = answer
-
-
-func _on_guess_text_show_debug_victory() -> void:
-	debug.text = "Good job!"
-	disable_keyboard(true)
 
 
 func _on_delete_key_pressed():
 	guess_text_array[current_guess].delete_letter()
+
+
+func _on_guess_text_reveal_anim_finished() -> void:
+	disable_keyboard(false)
+	for n in update_color_queue.size():
+		if not update_color_queue[n].in_word:
+			update_color_queue[n].theme = dark_theme
+		elif update_color_queue[n].in_word and not update_color_queue[n].in_position:
+			update_color_queue[n].theme = yellow_theme
+		elif update_color_queue[n].in_word and update_color_queue[n].in_position:
+			update_color_queue[n].theme = green_theme
+	
+	update_color_queue.clear()
+	
+	# Defeat
+	if current_guess == guess_limit:
+			disable_keyboard(true)
+			debug.text = answer
+
+
+func _on_guess_text_victory_anim_finished() -> void:
+	debug.text = "Good job!"
+	disable_keyboard(true)
 
 
 func _on_a_key_pressed():
