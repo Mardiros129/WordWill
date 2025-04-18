@@ -10,7 +10,7 @@ func _on_button_pressed() -> void:
 		var answer = line_edit.text.to_upper()
 		
 		var game = game_scene.instantiate()
-		game.get_node("InputBox").answer = answer
+		game.get_node("InputScreen").answer = answer
 		get_tree().root.add_child(game)
 		line_edit.clear()
 		self.hide()

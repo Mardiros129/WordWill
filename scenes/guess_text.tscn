@@ -1,16 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://ts3xf8r1ucb6"]
+[gd_scene load_steps=9 format=3 uid="uid://ts3xf8r1ucb6"]
 
 [ext_resource type="Theme" uid="uid://55ylst53xaxy" path="res://themes/light_theme.tres" id="1_ervk5"]
 [ext_resource type="Script" uid="uid://b6wc6xxygbe26" path="res://scripts/guess_text.gd" id="1_tndhs"]
 [ext_resource type="Theme" uid="uid://b67tv5v8ukr5x" path="res://themes/dark_theme.tres" id="2_tndhs"]
 [ext_resource type="Theme" uid="uid://cbds32u6wi2cf" path="res://themes/yellow_theme.tres" id="3_6l5g5"]
 [ext_resource type="Theme" uid="uid://bj35dnqj1vtx1" path="res://themes/green_theme.tres" id="4_vat7a"]
-[ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/empty_theme.tres" id="6_adrgf"]
+[ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/full_theme.tres" id="6_adrgf"]
+[ext_resource type="Theme" uid="uid://cafwecxuqbnwm" path="res://themes/empty_theme.tres" id="7_dm4s8"]
 [ext_resource type="PackedScene" uid="uid://b6k3tx1x13v8p" path="res://scenes/letter_box.tscn" id="7_ua3wx"]
 
-[node name="GuessText" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="GuessText" type="Container"]
 offset_right = 80.0
 offset_bottom = 80.0
 script = ExtResource("1_tndhs")
@@ -18,5 +17,6 @@ light_theme = ExtResource("1_ervk5")
 dark_theme = ExtResource("2_tndhs")
 yellow_theme = ExtResource("3_6l5g5")
 green_theme = ExtResource("4_vat7a")
-empty_theme = ExtResource("6_adrgf")
+empty_theme = ExtResource("7_dm4s8")
+full_theme = ExtResource("6_adrgf")
 box_scene = ExtResource("7_ua3wx")

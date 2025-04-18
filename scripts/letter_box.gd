@@ -15,3 +15,15 @@ func delete_letter():
 
 func return_letter() -> String:
 	return label.text
+
+
+func play_box_reveal():
+	anim_player.play("reveal")
+
+
+func play_box_victory():
+	anim_player.play("victory")
+
+
+func reset_anim():
+	anim_player.play("RESET")
