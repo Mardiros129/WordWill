@@ -21,6 +21,10 @@ func play_box_reveal():
 	anim_player.play("reveal")
 
 
+func play_shake():
+	anim_player.play("shake")
+
+
 func play_box_victory():
 	anim_player.play("victory")
 

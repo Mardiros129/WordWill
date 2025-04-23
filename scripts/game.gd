@@ -7,5 +7,5 @@ func _unhandled_input(event):
 
 
 func _on_menu_button_pressed() -> void:
-	get_tree().root.get_node("StartMenu").show()
+	get_tree().root.get_node("StartMenu").restart()
 	self.queue_free()

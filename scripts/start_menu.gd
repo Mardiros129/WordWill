@@ -27,6 +27,11 @@ func start_game() -> void:
 		self.hide()
 
 
+func restart() -> void:
+	self.show()
+	line_edit.grab_focus()
+
+
 func _on_button_pressed() -> void:
 	start_game()
 

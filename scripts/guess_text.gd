@@ -65,6 +65,11 @@ func play_reveal_anim() -> void:
 	reveal_anim_finished.emit()
 
 
+func play_mistake_anim() -> void:
+	for n in letter_slots.size():
+		letter_slots[n].play_shake()
+
+
 func play_victory_anim() -> void:
 	await letter_slots[letter_slots.size() - 1].get_node("AnimationPlayer").animation_finished
 	await get_tree().create_timer(1.0).timeout

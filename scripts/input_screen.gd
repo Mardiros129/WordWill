@@ -5,7 +5,8 @@ extends Control
 @onready var keyboard = $Keyboard
 
 @onready var debug = $Debug
-@onready var answer
+@onready var answer: String
+@onready var answer_letter_count: Array[int]
 @onready var guess_limit = 6
 @onready var current_guess = 0
 @onready var input_enabled = true
@@ -19,9 +20,13 @@ extends Control
 
 @onready var guess_text_array = [$GuessText1, $GuessText2, $GuessText3, $GuessText4, $GuessText5, $GuessText6]
 
+const ALPHABET_SIZE = 26
+
 
 func _ready() -> void:
 	set_debug_default()
+	count_letters(answer, answer_letter_count)
+	
 	for n in guess_text_array.size():
 		guess_text_array[n].create_letter_slots(answer.length())
 
@@ -119,15 +124,23 @@ func _on_reset_button_pressed() -> void:
 
 
 func _on_enter_key_pressed():
-	# Check word size
 	var my_word = guess_text_array[current_guess].get_word()
+	var shared_letter_count: Array[int]
+	shared_letter_count.resize(ALPHABET_SIZE)
+	shared_letter_count.fill(0)
+	compare_letters(my_word, answer_letter_count, shared_letter_count)
+	print("Shared letter count: " + str(shared_letter_count))
+	
+	## Check if word is the right size
 	if my_word.length() != answer.length():
 		debug.text = "Not a " + str(answer.length()) + "-letter word."
+		guess_text_array[current_guess].play_mistake_anim()
 	
-	# Check validity of each letter
+	## Check validity of each letter
 	else:
 		disable_keyboard(true)
 		
+		## Change keyboard color
 		for x in my_word.length():
 			var missing_letter = keyboard.get_node(my_word[x] + "Key")
 			missing_letter.checked = true
@@ -135,27 +148,87 @@ func _on_enter_key_pressed():
 			
 			if not answer.contains(my_word[x]):
 				missing_letter.in_word = false
-				guess_text_array[current_guess].set_dark(x)
 			elif answer[x] == my_word[x]:
 				missing_letter.in_word = true
 				missing_letter.in_position = true
-				guess_text_array[current_guess].set_green(x)
 			else:
 				if not missing_letter.in_position:
 					missing_letter.in_word = true
 					missing_letter.in_position = false
+			
+		## Change guess boxes color
+		# First check for green letters and lower the counter
+		var checked: Array[bool] # Keep track of what we checked already
+		checked.resize(my_word.length())
+		checked.fill(false)
+		
+		for x in my_word.length():
+			if answer[x] == my_word[x]:
+				guess_text_array[current_guess].set_green(x)
+				deprecate_letter(my_word[x], shared_letter_count)
+				checked[x] = true
+				
+		# Next, check for yellow letters but skip what was checked
+		for x in my_word.length():
+			if not checked[x]:
+				checked[x] = true
+				
+				var my_letter_index = get_letter_index(my_word[x])
+				# Check if the letter is in the answer and if there's still letters remaining in the guess
+				if shared_letter_count[my_letter_index] > 0:
 					guess_text_array[current_guess].set_yellow(x)
-				else:
-					guess_text_array[current_guess].set_dark(x)
-					
+					deprecate_letter(my_word[x], shared_letter_count)
+		
 		guess_text_array[current_guess].play_reveal_anim()
 		
-		# Victory
+		## Victory condition
 		if my_word == answer:
 			# Play anim and then signal when it's done so that the answer isn't spoiled early
 			guess_text_array[current_guess].play_victory_anim()
 		
 		current_guess += 1
+
+
+# Counts the number of letters in the string and assigns that number to size-26 array
+func count_letters(word: String, letter_count: Array[int]) -> void:
+	letter_count.resize(ALPHABET_SIZE)
+	letter_count.fill(0)
+
+	for n in word.length():
+		var letter = word.substr(n, 1)
+		var letter_index:int
+		letter_index = get_letter_index(letter)
+		letter_count[letter_index] += 1
+		# Adds to array at index of letter pos
+
+
+# Compare the answer with the guess to see how many letters they share. Assign to size-26 array.
+func compare_letters(my_guess: String, answer_letter_count: Array[int], shared_letter_count: Array[int]) -> void:
+	var guess_letter_count: Array[int]
+	count_letters(my_guess, guess_letter_count)
+	
+	print("Answer letter count: " + str(answer_letter_count))
+	print("Guess letter count: " + str(guess_letter_count))
+	
+	# Take the minimum value and assign it to the comparison
+	for n in ALPHABET_SIZE:
+		if answer_letter_count[n] < guess_letter_count[n]:
+			shared_letter_count[n] = answer_letter_count[n]
+		else:
+			shared_letter_count[n] = guess_letter_count[n]
+
+
+# The letter has been counted, so deprecate the number in the size-26 array.
+func deprecate_letter(letter: String, letter_count: Array[int]) -> void:
+	var letter_index = get_letter_index(letter)
+	letter_count[letter_index] -= 1
+
+
+# Calculate a single letter's unique index using its hex value.
+func get_letter_index(letter: String) -> int:
+	var letter_hex = letter.to_utf8_buffer().hex_encode()
+	var letter_index = letter_hex.hex_to_int() % ALPHABET_SIZE # 'N' is the first letter in the array, change to 'A'?
+	return letter_index
 
 
 func _on_delete_key_pressed():

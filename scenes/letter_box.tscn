@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6k3tx1x13v8p"]
+[gd_scene load_steps=11 format=3 uid="uid://b6k3tx1x13v8p"]
 
 [ext_resource type="Theme" uid="uid://i2ypr2lo1vgd" path="res://themes/full_theme.tres" id="1_vubbj"]
 [ext_resource type="Script" uid="uid://ifu8j2lrd6wm" path="res://scripts/letter_box.gd" id="2_gibne"]
@@ -105,6 +105,28 @@ tracks/8/path = NodePath("ColorPanel:position:y")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CoverPanel:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Label:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -223,11 +245,38 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 
+[sub_resource type="Animation" id="Animation_ltpn3"]
+resource_name = "shake"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CoverPanel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, -10, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, -9.99999, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, -9.99999, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a18ed"]
 _data = {
 &"RESET": SubResource("Animation_gibne"),
 &"pop": SubResource("Animation_vubbj"),
 &"reveal": SubResource("Animation_i25qu"),
+&"shake": SubResource("Animation_ltpn3"),
 &"victory": SubResource("Animation_a18ed")
 }
 
