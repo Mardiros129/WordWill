@@ -129,7 +129,7 @@ func _on_enter_key_pressed():
 	shared_letter_count.resize(ALPHABET_SIZE)
 	shared_letter_count.fill(0)
 	compare_letters(my_word, answer_letter_count, shared_letter_count)
-	print("Shared letter count: " + str(shared_letter_count))
+	#print("Shared letter count: " + str(shared_letter_count))
 	
 	## Check if word is the right size
 	if my_word.length() != answer.length():
@@ -207,8 +207,8 @@ func compare_letters(my_guess: String, answer_letter_count: Array[int], shared_l
 	var guess_letter_count: Array[int]
 	count_letters(my_guess, guess_letter_count)
 	
-	print("Answer letter count: " + str(answer_letter_count))
-	print("Guess letter count: " + str(guess_letter_count))
+	#print("Answer letter count: " + str(answer_letter_count))
+	#print("Guess letter count: " + str(guess_letter_count))
 	
 	# Take the minimum value and assign it to the comparison
 	for n in ALPHABET_SIZE:
