@@ -50,3 +50,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	anim_player.play("idle")
+
+
+func _on_close_button_pressed() -> void:
+	get_tree().quit()

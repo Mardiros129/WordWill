@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dai0ivdfrif0e"]
+[gd_scene load_steps=18 format=3 uid="uid://dai0ivdfrif0e"]
 
 [ext_resource type="Script" uid="uid://co4qmcuorwwi4" path="res://scripts/start_menu.gd" id="1_ouf4f"]
 [ext_resource type="PackedScene" uid="uid://bvaq87g2hr72f" path="res://scenes/game.tscn" id="2_thu50"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cfaaw8nriq8h0" path="res://assets/icon_eye.png" id="7_5byqq"]
 [ext_resource type="Texture2D" uid="uid://dxaxcuvtrrngn" path="res://assets/icon_nose.png" id="8_e58y3"]
 [ext_resource type="Texture2D" uid="uid://b3ybkjv2wng7t" path="res://assets/icon_eye_closed.png" id="9_5byqq"]
+[ext_resource type="Texture2D" uid="uid://dijhw5wd7oked" path="res://assets/close.png" id="11_apowk"]
 
 [sub_resource type="Theme" id="Theme_u4qax"]
 CheckButton/icons/checked = ExtResource("3_4v6gu")
@@ -668,7 +669,18 @@ text = "By Will Stone
 Stone Craftwork"
 horizontal_alignment = 1
 
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = -1026.0
+offset_right = 1380.0
+offset_bottom = -759.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("11_apowk")
+flat = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="VisibilityToggle" to="." method="_on_visibility_toggle_toggled"]
 [connection signal="animation_finished" from="CharacterLogo/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="input_event" from="CharacterLogo/IconBody/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
