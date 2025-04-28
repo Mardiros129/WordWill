@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dai0ivdfrif0e"]
+[gd_scene load_steps=17 format=3 uid="uid://dai0ivdfrif0e"]
 
 [ext_resource type="Script" uid="uid://co4qmcuorwwi4" path="res://scripts/start_menu.gd" id="1_ouf4f"]
 [ext_resource type="PackedScene" uid="uid://bvaq87g2hr72f" path="res://scenes/game.tscn" id="2_thu50"]
 [ext_resource type="Texture2D" uid="uid://udo2jgwboxwk" path="res://hidden_icon.png" id="3_4v6gu"]
-[ext_resource type="Texture2D" uid="uid://iwwpnogdt240" path="res://Shadow.svg" id="4_h61rw"]
 [ext_resource type="Texture2D" uid="uid://k05qdqir4472" path="res://shown_icon.png" id="4_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://cuci32v6jqd2j" path="res://assets/trapazoid.png" id="5_apowk"]
+[ext_resource type="Texture2D" uid="uid://blanta6j6p3gf" path="res://assets/word_wall_text.png" id="5_e58y3"]
 [ext_resource type="Texture2D" uid="uid://ce3fx1mohslx7" path="res://assets/icon_body.png" id="6_u4qax"]
 [ext_resource type="Texture2D" uid="uid://cfaaw8nriq8h0" path="res://assets/icon_eye.png" id="7_5byqq"]
 [ext_resource type="Texture2D" uid="uid://dxaxcuvtrrngn" path="res://assets/icon_nose.png" id="8_e58y3"]
@@ -46,7 +47,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-2, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
@@ -57,7 +58,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-434, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-453, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/4/type = "bezier"
@@ -173,6 +174,66 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../CharacterLogo/IconBody:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../CharacterLogo/IconBody:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -453)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../CharacterLogo/Eye1:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-113, -541)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../CharacterLogo/Eye2:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(115, -541)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../CharacterLogo/IconNose:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -491)]
 }
 
 [sub_resource type="Animation" id="Animation_5byqq"]
@@ -338,11 +399,127 @@ tracks/13/keys = {
 "values": [true, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_e58y3"]
+resource_name = "laugh"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CharacterLogo/Eye2/IconEye2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CharacterLogo/Eye1/IconEye1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CharacterLogo/Eye2/IconEyeClosed2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CharacterLogo/Eye1/IconEyeClosed1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CharacterLogo/IconBody:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.924149), Vector2(1, 1), Vector2(1, 0.924149), Vector2(1, 1), Vector2(1, 0.924149), Vector2(1, 1), Vector2(1, 0.924149)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CharacterLogo/IconBody:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1009, 0.19963, 0.299446, 0.399261, 0.499076, 0.601061, 0.699791),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -453), Vector2(0, -439), Vector2(0, -453), Vector2(0, -439), Vector2(0, -453), Vector2(0, -439), Vector2(0, -453), Vector2(0, -439)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CharacterLogo/Eye1:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1009, 0.19963, 0.299446, 0.399261, 0.500161, 0.599976, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-113, -541), Vector2(-113, -527), Vector2(-113, -541), Vector2(-113, -527), Vector2(-113, -541), Vector2(-113, -527), Vector2(-113, -541), Vector2(-113, -527)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../CharacterLogo/Eye2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.19963, 0.30053, 0.399261, 0.500161, 0.601061, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(115, -541), Vector2(115, -527), Vector2(115, -541), Vector2(115, -527), Vector2(115, -541), Vector2(115, -527), Vector2(115, -541), Vector2(115, -527)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../CharacterLogo/IconNose:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1009, 0.198545, 0.30053, 0.399261, 0.501246, 0.602146, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -491), Vector2(1, -477), Vector2(1, -491), Vector2(1, -477), Vector2(1, -491), Vector2(1, -477), Vector2(1, -491), Vector2(1, -477)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4v6gu"]
 _data = {
 &"RESET": SubResource("Animation_fcv5n"),
-&"idle": SubResource("Animation_5byqq")
+&"idle": SubResource("Animation_5byqq"),
+&"laugh": SubResource("Animation_e58y3")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e58y3"]
+size = Vector2(415, 314)
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -426,6 +603,7 @@ theme = SubResource("Theme_u4qax")
 button_pressed = true
 
 [node name="CharacterLogo" type="Node2D" parent="."]
+position = Vector2(-489, -182)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterLogo"]
 root_node = NodePath("../../VisibilityToggle")
@@ -434,14 +612,25 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="Shadow" type="Sprite2D" parent="CharacterLogo"]
-position = Vector2(-1.19209e-07, -370)
-scale = Vector2(0.574308, 0.594835)
-texture = ExtResource("4_h61rw")
+[node name="Trapazoid" type="Sprite2D" parent="CharacterLogo"]
+position = Vector2(-4, -309.75)
+scale = Vector2(1.57343, 1.5)
+texture = ExtResource("5_apowk")
+
+[node name="WordWallText" type="Sprite2D" parent="CharacterLogo"]
+position = Vector2(487.052, -245.052)
+scale = Vector2(1.30553, 1.30553)
+texture = ExtResource("5_e58y3")
 
 [node name="IconBody" type="Sprite2D" parent="CharacterLogo"]
-position = Vector2(-2, -434)
+position = Vector2(0, -453)
 texture = ExtResource("6_u4qax")
+
+[node name="Area2D" type="Area2D" parent="CharacterLogo/IconBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterLogo/IconBody/Area2D"]
+position = Vector2(-1.5, 7)
+shape = SubResource("RectangleShape2D_e58y3")
 
 [node name="Eye2" type="Node2D" parent="CharacterLogo"]
 position = Vector2(115, -541)
@@ -469,23 +658,17 @@ texture = ExtResource("8_e58y3")
 
 [node name="Credits" type="Label" parent="."]
 layout_mode = 1
-offset_left = 455.0
-offset_top = 398.0
-offset_right = 1188.0
-offset_bottom = 467.0
+offset_left = -360.0
+offset_top = 372.0
+offset_right = 373.0
+offset_bottom = 513.0
 theme_override_colors/font_color = Color(0.556953, 0.556953, 0.556953, 1)
 theme_override_font_sizes/font_size = 50
-text = "By Will Stone, Stone Craftwork"
-
-[node name="Dictionary" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 743.0
-offset_top = -268.0
-offset_right = 984.0
-offset_bottom = -154.0
-text = "Load Dictionary"
+text = "By Will Stone
+Stone Craftwork"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="VisibilityToggle" to="." method="_on_visibility_toggle_toggled"]
-[connection signal="pressed" from="Dictionary" to="." method="_on_dictionary_pressed"]
+[connection signal="animation_finished" from="CharacterLogo/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="input_event" from="CharacterLogo/IconBody/Area2D" to="." method="_on_area_2d_input_event"]

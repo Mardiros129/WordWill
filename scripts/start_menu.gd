@@ -4,9 +4,7 @@ extends Control
 @export var game_scene: PackedScene
 @onready var dictionary_data = {}
 @onready var visiblity_toggle = $VisibilityToggle
-
-@onready var dictionary_path = "res://JSON/test_index.json" # This doesn't seem to work with very big files
-
+@onready var anim_player = $CharacterLogo/AnimationPlayer
 
 func _ready() -> void:
 	line_edit.grab_focus()
@@ -45,7 +43,10 @@ func _on_visibility_toggle_toggled(toggled_on: bool) -> void:
 	line_edit.secret = toggled_on
 
 
-func _on_dictionary_pressed() -> void:
-	var data_file = FileAccess.open(dictionary_path, FileAccess.READ)
-	var parsed_result = JSON.parse_string(data_file.get_as_text())
-	dictionary_data = parsed_result
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event.is_action_pressed("Left Mouse"):
+		anim_player.play("laugh")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	anim_player.play("idle")
