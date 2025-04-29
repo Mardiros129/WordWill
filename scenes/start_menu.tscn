@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://co4qmcuorwwi4" path="res://scripts/start_menu.gd" id="1_ouf4f"]
 [ext_resource type="PackedScene" uid="uid://bvaq87g2hr72f" path="res://scenes/game.tscn" id="2_thu50"]
-[ext_resource type="Texture2D" uid="uid://udo2jgwboxwk" path="res://hidden_icon.png" id="3_4v6gu"]
-[ext_resource type="Texture2D" uid="uid://k05qdqir4472" path="res://shown_icon.png" id="4_nxjfj"]
+[ext_resource type="Texture2D" uid="uid://udo2jgwboxwk" path="res://assets/hidden_icon.png" id="3_4v6gu"]
+[ext_resource type="Texture2D" uid="uid://k05qdqir4472" path="res://assets/shown_icon.png" id="4_nxjfj"]
 [ext_resource type="Texture2D" uid="uid://cuci32v6jqd2j" path="res://assets/trapazoid.png" id="5_apowk"]
 [ext_resource type="Texture2D" uid="uid://blanta6j6p3gf" path="res://assets/word_wall_text.png" id="5_e58y3"]
 [ext_resource type="Texture2D" uid="uid://ce3fx1mohslx7" path="res://assets/icon_body.png" id="6_u4qax"]
@@ -542,10 +542,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -277.0
-offset_top = -59.0
-offset_right = 277.0
-offset_bottom = 59.0
+offset_left = -280.0
+offset_top = -92.3201
+offset_right = 274.0
+offset_bottom = 25.6799
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
@@ -560,10 +560,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.0
-offset_top = 118.0
-offset_right = 106.0
-offset_bottom = 195.0
+offset_left = -104.0
+offset_top = 42.6799
+offset_right = 108.0
+offset_bottom = 119.68
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -576,10 +576,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -246.0
-offset_top = -119.0
-offset_right = 246.0
-offset_bottom = -62.0
+offset_left = -287.0
+offset_top = -179.32
+offset_right = 297.0
+offset_bottom = -110.32
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -593,10 +593,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 298.0
-offset_top = -38.0
-offset_right = 496.0
-offset_bottom = 118.0
+offset_left = 296.0
+offset_top = -75.3201
+offset_right = 494.0
+offset_bottom = 80.6799
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -604,7 +604,8 @@ theme = SubResource("Theme_u4qax")
 button_pressed = true
 
 [node name="CharacterLogo" type="Node2D" parent="."]
-position = Vector2(-489, -182)
+position = Vector2(-280, -280.32)
+scale = Vector2(0.6, 0.6)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterLogo"]
 root_node = NodePath("../../VisibilityToggle")
@@ -660,22 +661,22 @@ texture = ExtResource("8_e58y3")
 [node name="Credits" type="Label" parent="."]
 layout_mode = 1
 offset_left = -360.0
-offset_top = 372.0
+offset_top = 182.68
 offset_right = 373.0
-offset_bottom = 513.0
+offset_bottom = 323.68
 theme_override_colors/font_color = Color(0.556953, 0.556953, 0.556953, 1)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "By Will Stone
-Stone Craftwork"
+a Stone Craftwork game"
 horizontal_alignment = 1
 
 [node name="CloseButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1113.0
-offset_top = -1026.0
-offset_right = 1380.0
-offset_bottom = -759.0
-scale = Vector2(0.5, 0.5)
+offset_left = 865.0
+offset_top = -754.0
+offset_right = 1132.0
+offset_bottom = -487.0
+scale = Vector2(0.3, 0.3)
 icon = ExtResource("11_apowk")
 flat = true
 

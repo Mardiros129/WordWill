@@ -39,9 +39,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Debug" type="Label" parent="InputScreen"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.08941
+anchor_left = 4.70052
 anchor_top = 0.302419
-anchor_right = 6.92275
+anchor_right = 5.53386
 anchor_bottom = 0.302419
 offset_left = -200.625
 offset_top = 10.0
@@ -60,18 +60,18 @@ offset_bottom = 40.0
 
 [node name="ResetButton" type="Button" parent="InputScreen"]
 layout_mode = 0
-offset_left = 191.25
-offset_top = 33.75
-offset_right = 312.25
-offset_bottom = 86.75
+offset_left = 183.75
+offset_top = 26.25
+offset_right = 304.75
+offset_bottom = 79.25
 text = "RESET"
 
 [node name="MenuButton" type="Button" parent="InputScreen"]
 layout_mode = 0
-offset_left = 58.7501
-offset_top = 33.75
-offset_right = 179.75
-offset_bottom = 86.75
+offset_left = 51.25
+offset_top = 26.25
+offset_right = 172.25
+offset_bottom = 79.25
 text = "MAIN MENU"
 
 [node name="GuessText1" parent="InputScreen" instance=ExtResource("6_p57ef")]
@@ -81,10 +81,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 779.25
-offset_top = 58.375
-offset_right = 779.25
-offset_bottom = 58.375
+offset_left = 574.25
+offset_top = 54.0
+offset_right = 574.25
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -95,10 +95,10 @@ anchor_left = 1.43229
 anchor_top = 0.332661
 anchor_right = 1.43229
 anchor_bottom = 0.332661
-offset_left = 645.0
-offset_top = 158.75
-offset_right = 645.0
-offset_bottom = 158.75
+offset_left = 440.0
+offset_top = 127.375
+offset_right = 440.0
+offset_bottom = 127.375
 
 [node name="GuessText3" parent="InputScreen" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -107,10 +107,10 @@ anchor_left = 1.43229
 anchor_top = 1.00806
 anchor_right = 1.43229
 anchor_bottom = 1.00806
-offset_left = 645.0
-offset_top = 206.875
-offset_right = 645.0
-offset_bottom = 206.875
+offset_left = 440.0
+offset_top = 148.5
+offset_right = 440.0
+offset_bottom = 148.5
 
 [node name="GuessText4" parent="InputScreen" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -119,10 +119,10 @@ anchor_left = 1.43229
 anchor_top = 1.66331
 anchor_right = 1.43229
 anchor_bottom = 1.66331
-offset_left = 645.0
-offset_top = 256.25
-offset_right = 645.0
-offset_bottom = 256.25
+offset_left = 440.0
+offset_top = 170.875
+offset_right = 440.0
+offset_bottom = 170.875
 
 [node name="GuessText5" parent="InputScreen" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -131,10 +131,10 @@ anchor_left = 1.43229
 anchor_top = 2.34879
 anchor_right = 1.43229
 anchor_bottom = 2.34879
-offset_left = 645.0
-offset_top = 303.75
-offset_right = 645.0
-offset_bottom = 303.75
+offset_left = 440.0
+offset_top = 191.375
+offset_right = 440.0
+offset_bottom = 191.375
 
 [node name="GuessText6" parent="InputScreen" instance=ExtResource("6_p57ef")]
 layout_mode = 1
@@ -143,27 +143,29 @@ anchor_left = 1.43229
 anchor_top = 3.04435
 anchor_right = 1.43229
 anchor_bottom = 3.04435
-offset_left = 645.0
-offset_top = 350.625
-offset_right = 645.0
-offset_bottom = 350.625
+offset_left = 441.25
+offset_top = 211.25
+offset_right = 441.25
+offset_bottom = 211.25
 
 [node name="EnterKey" type="Button" parent="InputScreen"]
 layout_mode = 0
-offset_left = 223.125
-offset_top = 883.125
-offset_right = 423.125
-offset_bottom = 993.125
+offset_left = 267.5
+offset_top = 621.25
+offset_right = 467.5
+offset_bottom = 731.25
+scale = Vector2(0.6, 0.6)
 theme = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 text = "ENTER"
 
 [node name="DeleteKey" type="Button" parent="InputScreen"]
 layout_mode = 0
-offset_left = 1273.12
-offset_top = 883.125
-offset_right = 1473.12
-offset_bottom = 993.125
+offset_left = 898.125
+offset_top = 621.25
+offset_right = 1098.13
+offset_bottom = 731.25
+scale = Vector2(0.6, 0.6)
 theme = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 text = "DELETE"
@@ -175,12 +177,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -68.875
-offset_top = -27.875
-offset_right = -28.875
-offset_bottom = 12.125
+offset_left = 63.625
+offset_top = 61.5
+offset_right = 103.625
+offset_bottom = 101.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
 
 [node name="AKey" type="Button" parent="InputScreen/Keyboard"]
 layout_mode = 0
@@ -443,11 +446,11 @@ text = "Z"
 script = ExtResource("8_gee14")
 
 [node name="CloseButton" type="Button" parent="."]
-offset_left = 2393.0
-offset_top = 29.0
-offset_right = 2660.0
-offset_bottom = 296.0
-scale = Vector2(0.5, 0.5)
+offset_left = 1825.0
+offset_top = 10.0
+offset_right = 2092.0
+offset_bottom = 277.0
+scale = Vector2(0.3, 0.3)
 icon = ExtResource("9_0tnpc")
 flat = true
 

@@ -1,7 +1,7 @@
 extends Container
 
 @onready var letter_slots: Array
-@onready var offset = 90
+@onready var offset = 65
 @onready var current_character = 0
 
 @export var light_theme: Theme

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://udo2jgwboxwk"
-path="res://.godot/imported/hidden_icon.png-72c352b6334c4b8ace75ad780f63b3d9.ctex"
+uid="uid://b2m07bg0qrln0"
+path="res://.godot/imported/word will icon.svg-04d3afe74df8da5976134e2d64b7dc88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hidden_icon.png"
-dest_files=["res://.godot/imported/hidden_icon.png-72c352b6334c4b8ace75ad780f63b3d9.ctex"]
+source_file="res://assets/word will icon.svg"
+dest_files=["res://.godot/imported/word will icon.svg-04d3afe74df8da5976134e2d64b7dc88.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

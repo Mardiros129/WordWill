@@ -185,8 +185,8 @@ func _on_enter_key_pressed():
 		if my_word == answer:
 			# Play anim and then signal when it's done so that the answer isn't spoiled early
 			guess_text_array[current_guess].play_victory_anim()
-		
-		current_guess += 1
+		else:
+			current_guess += 1
 
 
 # Counts the number of letters in the string and assigns that number to size-26 array
@@ -206,9 +206,6 @@ func count_letters(word: String, letter_count: Array[int]) -> void:
 func compare_letters(my_guess: String, answer_letter_count: Array[int], shared_letter_count: Array[int]) -> void:
 	var guess_letter_count: Array[int]
 	count_letters(my_guess, guess_letter_count)
-	
-	#print("Answer letter count: " + str(answer_letter_count))
-	#print("Guess letter count: " + str(guess_letter_count))
 	
 	# Take the minimum value and assign it to the comparison
 	for n in ALPHABET_SIZE:
